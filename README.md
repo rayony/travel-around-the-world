@@ -1,6 +1,12 @@
 # Travel around the world
 
-Closed great-circle tour of **196 places** (Hong Kong + 195 UN member/observer capitals): start in Hong Kong, visit each capital **exactly once**, return to Hong Kong, minimise the sum of spherical distances.
+Closed great-circle tour of **196 places** (Hong Kong + 195 UN member/observer capitals): start in Hong Kong (HK), visit each capital **exactly once**, return to Hong Kong, minimise the sum of spherical distances.
+
+This is a toy project for algorithm study and learning, a derivative of TSP heuristics using great circle distance as measurement, finding solution and explain with an interactive map on various algorithm
+
+## Funny Fact:
+Although the solution starts and ends in HK, similar route applies if you start from any capital in the world and include HK as one of the waypoint!
+
 
 ## Open the map
 
