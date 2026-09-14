@@ -1,0 +1,5 @@
+world_basemap.jpg
+*.pyc
+__pycache__/
+output/
+.DS_Store
