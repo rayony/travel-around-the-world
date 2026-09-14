@@ -4,6 +4,8 @@ Closed great-circle tour of **196 places** (Hong Kong + 195 UN member/observer c
 
 This is a toy project for algorithm study and learning, a derivative of TSP heuristics using great circle distance as measurement, finding solution and explain with an interactive map on various algorithm
 
+**Live site (GitHub Pages):** [https://rayony.github.io/travel-around-the-world/](https://rayony.github.io/travel-around-the-world/)
+
 ![Suggested closed tour (2-opt + Or-opt, 147,945 km)](docs/iEZm7.png)
 
 Coastlines: [Natural Earth 110m land](https://www.naturalearthdata.com/) (public domain). Teal line: suggested Hamiltonian cycle from Hong Kong. Red dot: Hong Kong. Straight segments on this plate-carrée plot; the interactive map draws great-circle arcs.
@@ -15,22 +17,24 @@ Although the solution starts and ends in HK, similar route applies if you start 
 
 Same tours, same numbers. Only the chrome and lesson text differ.
 
+After Pages is on (`Settings → Pages → Deploy from a branch → main / docs`):
+
+| Language | Live URL |
+| --- | --- |
+| Landing | https://rayony.github.io/travel-around-the-world/ |
+| 繁體中文 (Hong Kong) | https://rayony.github.io/travel-around-the-world/hk_capital_tour_map.html |
+| English | https://rayony.github.io/travel-around-the-world/hk_capital_tour_map.en.html |
+
+In the repo the same files are:
+
 | Language | File | `lang` |
 | --- | --- | --- |
-| 繁體中文 (Hong Kong) | [`docs/hk_capital_tour_map.html`](docs/hk_capital_tour_map.html) | `zh-Hant` |
+| 繁體中文 | [`docs/hk_capital_tour_map.html`](docs/hk_capital_tour_map.html) | `zh-Hant` |
 | English | [`docs/hk_capital_tour_map.en.html`](docs/hk_capital_tour_map.en.html) | `en` |
 
-How to open:
+Needs a network connection for Leaflet, NASA Blue Marble, and optional OSM WMS. GitHub’s *file preview* does not run the map.
 
-1. Download the file you want (or clone the repo).
-2. Open it in a **desktop browser** (Chrome / Firefox / Edge / Safari).
-3. Stay online: Leaflet, the NASA Blue Marble JPEG, and optional OSM WMS load from the network.
-
-GitHub’s file preview will **not** run the map. Use a local file or GitHub Pages.
-
-Default basemap is **NASA Blue Marble** on `EPSG:4326` so city pins sit on the same equirectangular grid as the image (Hong Kong should fall on the east side of the Pearl River estuary). Optional layer: OSM WMS in the same CRS. Do not paste the NASA image onto Web Mercator — latitude will drift.
-
-On-map credit is short (`NASA Blue Marble (EPSG:4326)`). Full credit is in the Leaflet attribution and below.
+Default basemap is **NASA Blue Marble** on `EPSG:4326` so city pins sit on the same equirectangular grid as the image (Hong Kong should fall on the east side of the Pearl River estuary).
 
 ## Assumption: UN membership list as of 2026-09-14
 
@@ -54,9 +58,10 @@ Heuristic TSP only. Held–Karp is impossible at n = 196.
 
 | Path | What |
 | --- | --- |
+| `docs/index.html` | Pages landing (language picker) |
 | `docs/hk_capital_tour_map.html` | Map + lesson, Traditional Chinese (zh-HK) |
 | `docs/hk_capital_tour_map.en.html` | Same app, English UI |
-| `docs/iEZm7.png` | Continent outline + suggested tour (README figure) |
+| `docs/iEZm7.png` | Continent outline + suggested tour |
 | `data/capitals_0-195.csv` | Cleaned CityID 0–195 |
 | `data/SOURCES.md` | Imagery credits |
 | `solvers/tsp_capitals.py` | Haversine + NN / farthest insertion / 2-opt / Or-opt / 3-opt |
