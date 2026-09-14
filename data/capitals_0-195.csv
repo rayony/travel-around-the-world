@@ -31,20 +31,20 @@ CityID,Independent Nation States w.r.t UN,City / Capital City,PosX,PosY,Latitude
 29,Cambodia,Phnom Penh,10493,1156,11.55637,104.92821,No,
 30,Cameroon,Yaoundé,1150,385,3.84803,11.50208,No,
 31,Canada,Ottawa,-7570,4542,45.42153,-75.69719,No,
-32,Cape Verde,Praia,-2351,1493,14.93305,-23.51333,No,
+32,Cabo Verde,Praia,-2351,1493,14.93305,-23.51333,Yes,nation (UN short name 2026-09-14)
 33,Central African Republic,Bangui,1856,439,4.39467,18.55819,No,
 34,Chad,N'Djamena,1506,1222,12.22467,15.05711,No,
 35,Chile,Santiago,-7067,-3345,-33.44889,-70.66927,No,
 36,China,Beijing,11641,3990,39.9042,116.4074,No,
 37,Colombia,Bogotá,-7407,471,4.71099,-74.07209,No,
 38,Comoros,Moroni,4325,-1172,-11.71722,43.24731,No,
-39,Congo (Republic of the),Brazzaville,1524,-426,-4.2634,15.2429,Yes,"city, lat, lon, x, y"
+39,Congo,Brazzaville,1524,-426,-4.2634,15.2429,Yes,"city, lat, lon, x, y, nation (UN short name 2026-09-14)"
 40,Costa Rica,San José,-8409,993,9.92807,-84.09072,No,
-41,Côte d’Ivoire,Yamoussoukro,-555,754,7.53999,-5.54708,No,
+41,Côte D'Ivoire,Yamoussoukro,-555,754,7.53999,-5.54708,Yes,nation (UN short name 2026-09-14)
 42,Croatia,Zagreb,1598,4582,45.81501,15.98192,No,
 43,Cuba,Havana,-8237,2311,23.11359,-82.3666,No,
 44,Cyprus,Nicosia,3338,3519,35.18557,33.38228,No,
-45,Czech Republic,Prague,1444,5008,50.07554,14.4378,No,
+45,Czechia,Prague,1444,5008,50.07554,14.4378,Yes,nation (UN short name 2026-09-14)
 46,Democratic People's Republic of Korea,Pyongyang,12576,3904,39.03922,125.76252,No,
 47,Democratic Republic of the Congo,Kinshasa,1531,-433,-4.3276,15.3136,Yes,"city, lat, lon, x, y"
 48,Denmark,Copenhagen,1257,5568,55.6761,12.56834,No,
@@ -129,7 +129,7 @@ CityID,Independent Nation States w.r.t UN,City / Capital City,PosX,PosY,Latitude
 127,Oman,Muscat,5841,2359,23.58589,58.40592,No,
 128,Pakistan,Islamabad,7305,3368,33.68442,73.04788,No,
 129,Palau,Ngerulmud,13462,750,7.50038,134.62429,No,
-130,Palestine,Ramallah,3523,3195,31.95216,35.23315,No,
+130,State of Palestine,Ramallah,3523,3195,31.95216,35.23315,Yes,nation (UN short name 2026-09-14)
 131,Panama,Panama City,-7952,898,8.98238,-79.51987,No,
 132,Papua New Guinea,Port Moresby,14718,-944,-9.4438,147.18027,No,
 133,Paraguay,Asunción,-5758,-2526,-25.26374,-57.57593,No,
@@ -172,12 +172,12 @@ CityID,Independent Nation States w.r.t UN,City / Capital City,PosX,PosY,Latitude
 170,Tajikistan,Dushanbe,6879,3856,38.55977,68.78704,No,
 171,Thailand,Bangkok,10050,1376,13.75633,100.50177,No,
 172,North Macedonia,Skopje,2175,4161,41.60864,21.74528,Yes,nation
-173,Timor Leste,Dili,12573,-887,-8.87422,125.72754,No,
+173,Timor-Leste,Dili,12573,-887,-8.87422,125.72754,Yes,nation (UN short name 2026-09-14)
 174,Togo,Lomé,123,613,6.12563,1.22542,No,
 175,Tonga,Nuku'alofa,-17521,-2114,-21.13807,-175.21168,No,
 176,Trinidad and Tobago,Port of Spain,-6150,1065,10.6549,-61.50193,No,
 177,Tunisia,Tunis,1018,3681,36.80649,10.18153,No,
-178,Turkey,Ankara,3286,3993,39.93336,32.85974,No,
+178,Türkiye,Ankara,3286,3993,39.93336,32.85974,Yes,nation (UN short name 2026-09-14)
 179,Turkmenistan,Ashgabat,5833,3796,37.96008,58.32606,No,
 180,Tuvalu,Funafuti,17920,-852,-8.52115,179.19619,No,
 181,Uganda,Kampala,3258,35,0.3476,32.58252,No,
@@ -189,7 +189,7 @@ CityID,Independent Nation States w.r.t UN,City / Capital City,PosX,PosY,Latitude
 187,Uruguay,Montevideo,-5616,-3490,-34.90111,-56.16453,No,
 188,Uzbekistan,Tashkent,6924,4130,41.2995,69.24007,No,
 189,Vanuatu,Port Vila,16833,-1773,-17.73325,168.32732,No,
-190,Vatican City,Vatican City,1245,4190,41.9029,12.4534,Yes,"city, lat, lon"
+190,Holy See,Vatican City,1245,4190,41.9029,12.4534,Yes,"city, lat, lon, nation (UN short name 2026-09-14)"
 191,Venezuela,Caracas,-6690,1048,10.4806,-66.9036,Yes,"lat, lon, x, y"
 192,Viet Nam,Hanoi,10583,2103,21.02776,105.83416,No,
 193,Yemen,Sana'a,4420,1537,15.37237,44.19822,No,
