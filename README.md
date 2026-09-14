@@ -4,7 +4,7 @@ Closed great-circle tour of **196 places** (Hong Kong + 195 UN member/observer c
 
 This is a toy project for algorithm study and learning, a derivative of TSP heuristics using great circle distance as measurement, finding solution and explain with an interactive map on various algorithm
 
-![Suggested closed tour (2-opt + Or-opt, 147,945 km)](docs/world-tour-oropt.svg)
+![Suggested closed tour (2-opt + Or-opt, 147,945 km)](docs/iEZm7.png)
 
 Coastlines: [Natural Earth 110m land](https://www.naturalearthdata.com/) (public domain). Teal line: suggested Hamiltonian cycle from Hong Kong. Red dot: Hong Kong. Straight segments on this plate-carrée plot; the interactive map draws great-circle arcs.
 
