@@ -168,7 +168,7 @@
     <div id="map"></div>
     <div class="legend">
       紅點＝香港起迄　青線＝已走大圓航線　黃點＝目前站<br>
-      底圖預設 OpenStreetMap（ODbL）。備選 NASA Blue Marble Next Generation（公有領域，直連 NASA Visible Earth，不在本 repo 存放圖檔）。未使用 Esri 圖磚，避免 ArcGIS Online 授權問題。
+      底圖：NASA Blue Marble（EPSG:4326）· 備選 OSM WMS · 出處見圖角
     </div>
   </div>
   <div id="toolbar">
@@ -710,34 +710,43 @@ function gcPoints(a,b,n){
   return segs;
 }
 
-const map = L.map('map', { worldCopyJump: true, minZoom: 2, zoomControl: true }).setView([20, 20], 2);
-const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-  maxZoom: 19
-});
 const nasaUrl = 'https://eoimages.gsfc.nasa.gov/images/imagerecords/73000/73909/world.topo.bathy.200412.3x5400x2700.jpg';
-const nasa = L.imageOverlay(nasaUrl, [[-90,-180],[90,180]], {opacity:1, zIndex:0});
-let baseMode = 'osm';
-osm.addTo(map);
-osm.on('tileerror', function(){
-  if (baseMode !== 'osm') return;
-  baseMode = 'nasa';
-  map.removeLayer(osm);
-  nasa.addTo(map);
-  map.setMaxBounds([[-90,-180],[90,180]]);
+const map = L.map('map', {
+  crs: L.CRS.EPSG4326,
+  worldCopyJump: false,
+  minZoom: 1,
+  maxZoom: 8,
+  zoomControl: true,
+  maxBounds: [[-90,-180],[90,180]],
+  maxBoundsViscosity: 1
+}).setView([22.39643, 114.1095], 3);
+const nasa = L.imageOverlay(nasaUrl, [[-90,-180],[90,180]], {
+  opacity: 1,
+  zIndex: 0,
+  attribution: '<a href="https://visibleearth.nasa.gov/images/73909/december-blue-marble-next-generation-w-topography-and-bathymetry">NASA Blue Marble NG</a> (equirectangular, public domain)'
 });
+const osm4326 = L.tileLayer.wms('https://ows.terrestris.de/osm/service?', {
+  layers: 'OSM-WMS',
+  format: 'image/png',
+  transparent: false,
+  version: '1.3.0',
+  crs: L.CRS.EPSG4326,
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> / terrestris WMS (EPSG:4326)'
+});
+let baseMode = 'nasa';
+nasa.addTo(map);
 const baseCtl = L.control({position:'topright'});
 baseCtl.onAdd = function(){
   const d = L.DomUtil.create('div');
-  d.style.cssText = 'background:#fff;border:1px solid #c5d0de;border-radius:8px;padding:6px;font-size:12px;line-height:1.8';
-  d.innerHTML = '<label><input type="radio" name="base" value="osm" checked> OpenStreetMap</label><br>'+
-                '<label><input type="radio" name="base" value="nasa"> NASA Blue Marble</label>';
+  d.style.cssText = 'background:#fff;border:1px solid #c5d0de;border-radius:8px;padding:6px;font:12px/1.8 sans-serif';
+  d.innerHTML = '<label><input type="radio" name="base" value="nasa" checked> NASA Blue Marble</label><br>'+
+                '<label><input type="radio" name="base" value="osm"> OSM (WGS84 WMS)</label>';
   L.DomEvent.disableClickPropagation(d);
   d.querySelectorAll('input').forEach(inp => {
     inp.onchange = () => {
-      map.removeLayer(osm); map.removeLayer(nasa);
-      if (inp.value==='osm'){ osm.addTo(map); baseMode='osm'; }
-      else { nasa.addTo(map); baseMode='nasa'; map.setMaxBounds([[-90,-180],[90,180]]); }
+      map.removeLayer(nasa); map.removeLayer(osm4326);
+      if (inp.value==='osm'){ osm4326.addTo(map); baseMode='osm'; }
+      else { nasa.addTo(map); baseMode='nasa'; }
     };
   });
   return d;
