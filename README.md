@@ -11,13 +11,22 @@ Coastlines: [Natural Earth 110m land](https://www.naturalearthdata.com/) (public
 ## Funny Fact:
 Although the solution starts and ends in HK, similar route applies if you start from any capital in the world and include HK as one of the waypoint!
 
-## Open the map
+## Open the map (zh-HK / English)
 
-The interactive player and algorithm lesson is a single file:
+Same tours, same numbers. Only the chrome and lesson text differ.
 
-[`docs/hk_capital_tour_map.html`](docs/hk_capital_tour_map.html)
+| Language | File | `lang` |
+| --- | --- | --- |
+| 繁體中文 (Hong Kong) | [`docs/hk_capital_tour_map.html`](docs/hk_capital_tour_map.html) | `zh-Hant` |
+| English | [`docs/hk_capital_tour_map.en.html`](docs/hk_capital_tour_map.en.html) | `en` |
 
-Open it in a desktop browser (needs network for Leaflet + the NASA JPEG). GitHub’s file preview will **not** run the map; use raw / local file / GitHub Pages.
+How to open:
+
+1. Download the file you want (or clone the repo).
+2. Open it in a **desktop browser** (Chrome / Firefox / Edge / Safari).
+3. Stay online: Leaflet, the NASA Blue Marble JPEG, and optional OSM WMS load from the network.
+
+GitHub’s file preview will **not** run the map. Use a local file or GitHub Pages.
 
 Default basemap is **NASA Blue Marble** on `EPSG:4326` so city pins sit on the same equirectangular grid as the image (Hong Kong should fall on the east side of the Pearl River estuary). Optional layer: OSM WMS in the same CRS. Do not paste the NASA image onto Web Mercator — latitude will drift.
 
@@ -45,9 +54,9 @@ Heuristic TSP only. Held–Karp is impossible at n = 196.
 
 | Path | What |
 | --- | --- |
-| `docs/hk_capital_tour_map.html` | Map + lesson |
-| `docs/world-tour-oropt.svg` | Continent outline + suggested tour for the README |
-| `docs/world-tour-oropt.png` | Same figure as PNG |
+| `docs/hk_capital_tour_map.html` | Map + lesson, Traditional Chinese (zh-HK) |
+| `docs/hk_capital_tour_map.en.html` | Same app, English UI |
+| `docs/iEZm7.png` | Continent outline + suggested tour (README figure) |
 | `data/capitals_0-195.csv` | Cleaned CityID 0–195 |
 | `data/SOURCES.md` | Imagery credits |
 | `solvers/tsp_capitals.py` | Haversine + NN / farthest insertion / 2-opt / Or-opt / 3-opt |
