@@ -4,9 +4,12 @@ Closed great-circle tour of **196 places** (Hong Kong + 195 UN member/observer c
 
 This is a toy project for algorithm study and learning, a derivative of TSP heuristics using great circle distance as measurement, finding solution and explain with an interactive map on various algorithm
 
+![Suggested closed tour (2-opt + Or-opt, 147,945 km)](docs/world-tour-oropt.svg)
+
+Coastlines: [Natural Earth 110m land](https://www.naturalearthdata.com/) (public domain). Teal line: suggested Hamiltonian cycle from Hong Kong. Red dot: Hong Kong. Straight segments on this plate-carrée plot; the interactive map draws great-circle arcs.
+
 ## Funny Fact:
 Although the solution starts and ends in HK, similar route applies if you start from any capital in the world and include HK as one of the waypoint!
-
 
 ## Open the map
 
@@ -42,7 +45,9 @@ Heuristic TSP only. Held–Karp is impossible at n = 196.
 
 | Path | What |
 | --- | --- |
-| `docs/hk_capital_tour_map.html` | Map + lesson (upload / replace this file when the viewer changes) |
+| `docs/hk_capital_tour_map.html` | Map + lesson |
+| `docs/world-tour-oropt.svg` | Continent outline + suggested tour for the README |
+| `docs/world-tour-oropt.png` | Same figure as PNG |
 | `data/capitals_0-195.csv` | Cleaned CityID 0–195 |
 | `data/SOURCES.md` | Imagery credits |
 | `solvers/tsp_capitals.py` | Haversine + NN / farthest insertion / 2-opt / Or-opt / 3-opt |
@@ -83,6 +88,7 @@ Python 3.9+, no third-party packages.
   JPEG: https://eoimages.gsfc.nasa.gov/images/imagerecords/73000/73909/world.topo.bathy.200412.3x5400x2700.jpg  
   Credit: NASA Earth Observatory / NASA Visible Earth.
 - Optional: OSM as WMS in EPSG:4326 (© OpenStreetMap contributors, ODbL; renderer terrestris).
+- README outline map: Natural Earth land 110m, public domain.
 
 ## Licence
 
